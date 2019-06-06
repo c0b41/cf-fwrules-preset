@@ -36,5 +36,6 @@ Cloudflare Firewall Rules Preset or bot request blocker.
 (http.request.uri.path eq "/components/com_facileforms/libraries/jquery/uploadify.php") or
 (http.request.uri.path eq "/index.php?option=com_adsmanager&task=upload&tmpl=component") or
 (http.request.uri.path eq "/politic/wp-login.php") or
-(http.request.uri.path eq "/sftp-config.json")
+(http.request.uri.path eq "/sftp-config.json") or
+(http.request.uri.path eq "/" and http.request.method eq "POST") or (http.request.uri contains ".git/" and http.request.method in {"GET" "POST" "HEAD" "OPTIONS"})
 ```
